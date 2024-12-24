@@ -73,15 +73,15 @@ Day 2: Arrays and Objects
 
 Day 4: Asynchronous JavaScript (Promises and async/await)
 
-Promises:
+// Promises:
 
-        States: Pending, Fulfilled, Rejected.
-        Methods: .then(), .catch(), .finally().
+//         States: Pending, Fulfilled, Rejected.
+//         Methods: .then(), .catch(), .finally().
 
-Async/Await:
+// Async/Await:
 
-        Writing cleaner asynchronous code.
-        Handling errors with try...catch.
+//         Writing cleaner asynchronous code.
+//         Handling errors with try...catch.
 
 // -------------------------------------------------------------------------------------------------------------
 
