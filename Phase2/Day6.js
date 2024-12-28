@@ -65,5 +65,3 @@ async function asyncTask() {
 asyncTask();
 
 console.log('Task queued... Waiting for async operations...');
-
-    
