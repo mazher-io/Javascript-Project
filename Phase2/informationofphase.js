@@ -1,4 +1,4 @@
-// Day 6: Event Loop and Callbacks
+Day 6: Event Loop and Callbacks
 
 1. Introduction to the Event Loop in JavaScript
 
@@ -113,4 +113,138 @@ setInterval(callback, interval);
 
 
 
-    
+// ------------------------------------------------------------------------------------------------------------------
+
+Day 7: Object-Oriented Programming (Quick Revision Notes)
+
+
+1. Introduction to Object-Oriented Programming (OOP)
+
+// OOP: A programming paradigm using objects to model real-world entities.
+// Focuses on Encapsulation, Inheritance, Polymorphism, and Abstraction.
+
+2. Objects and Prototypes in JavaScript
+
+// Objects in JavaScript can have properties (data) and methods (functions).
+// Every object in JavaScript has an internal link to another object called its prototype.
+
+3. Prototype Chain and Inheritance
+
+// Prototype Chain: Allows objects to inherit methods and properties from their prototype.
+// Example: obj.__proto__ points to the prototype of obj.
+
+4. Constructor Functions and new Keyword
+
+// Constructor functions are templates for creating objects.
+
+Example:
+
+function Person(name) {
+  this.name = name;
+}
+const person1 = new Person('Alice');
+
+// The new keyword:
+// Creates a new object.
+// Sets its prototype to the constructor's prototype.
+// Calls the constructor function with this bound to the new object.
+
+
+5. Prototypal Inheritance
+// Objects inherit directly from other objects using the prototype chain.
+
+Example:
+
+const animal = {
+  speak() {
+    console.log('Animal speaks');
+  }
+};
+const dog = Object.create(animal);
+dog.speak(); // Inherits speak method
+
+
+6. ES6 Classes and Syntax
+
+// class: Cleaner syntax for creating objects and managing inheritance.
+// Features:
+// constructor(): Initializes properties.
+// Instance methods for functionality.
+
+Example:
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  greet() {
+    console.log(`Hello, ${this.name}`);
+  }
+}
+
+
+7. Extending Classes (Inheritance in ES6)
+
+// extends: Enables inheritance.
+// super(): Calls the parent class constructor.
+Example:
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+class Dog extends Animal {
+  bark() {
+    console.log(`${this.name} barks!`);
+  }
+}
+
+8. Encapsulation and Abstraction
+
+// Encapsulation: Hiding internal details using private properties (#).
+// Abstraction: Exposing only necessary details through methods.
+Example:
+
+class Account {
+  #balance = 0;
+  deposit(amount) { this.#balance += amount; }
+  getBalance() { return this.#balance; }
+}
+
+9. Polymorphism in JavaScript
+
+// The same method behaves differently depending on the object calling it.
+Example:
+
+class Animal {
+  speak() { console.log('Animal speaks'); }
+}
+class Dog extends Animal {
+  speak() { console.log('Dog barks'); }
+}
+10. Static Methods and Properties
+// Belong to the class itself, not individual instances.
+// Useful for utility methods.
+Example:
+
+class MathUtils {
+  static add(a, b) { return a + b; }
+}
+console.log(MathUtils.add(2, 3)); // 5
+
+
+11. Getters and Setters
+
+// Control access to properties with methods.
+// get: Access computed values or masked data.
+// set: Validate and modify properties.
+Example:
+
+class User {
+  #password;
+  get password() { return '******'; }
+  set password(pwd) { if (pwd.length >= 6) this.#password = pwd; }
+}
+
+// -----------------------------------------------------------------------------------------------------
