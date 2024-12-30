@@ -248,3 +248,81 @@ class User {
 }
 
 // -----------------------------------------------------------------------------------------------------
+
+Day 8: ES6 Classes and Static Methods - Quick Notes
+
+1. Introduction to ES6 Classes
+
+// ES6 Classes simplify creating objects and inheritance in JavaScript.
+
+// A template for creating objects with properties and methods.
+
+// Syntax is easier to read and looks similar to object-oriented languages.
+
+2. Class Constructors
+
+// Special method called constructor() runs when an object is created.
+
+// Initializes object properties.
+
+3. Class Methods
+
+// Functions defined inside a class.
+
+// Can be called using objects of the class.
+
+
+4. Static Methods and Properties
+
+// Static Methods belong to the class itself, not instances.
+
+// Used for utility functions that don’t need object data.
+
+// Accessed directly by the class name.
+
+
+
+5. Private Fields and Methods (Encapsulation)
+
+// Introduced with # prefix to make properties private.
+
+// Accessible only inside the class.
+
+
+6. Inheritance with extends and super()
+
+// Inheritance allows a child class to reuse properties and methods of a parent class.
+
+// extends connects child to parent class.
+
+// super() calls the parent constructor.
+
+
+7. Method Overriding
+
+// Child class can override parent methods.
+
+// Use super.method() to call the parent’s version.
+
+
+8. Getters and Setters in ES6 Classes
+
+// get retrieves values like properties.
+
+// set validates or modifies values before setting them.
+
+
+9. Polymorphism in ES6 Classes
+
+// Polymorphism allows the same method name to behave differently based on the object.
+
+
+
+10. Abstract Classes (Simulated) (Optional)
+
+// Used to enforce rules for inheritance.
+// Cannot be instantiated directly.
+
+// -----------------------------------------------------------------------------------------------------
+
+
