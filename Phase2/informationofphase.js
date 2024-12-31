@@ -325,4 +325,196 @@ Day 8: ES6 Classes and Static Methods - Quick Notes
 
 // -----------------------------------------------------------------------------------------------------
 
+Day 9: Functional Programming Basics
+
+1. Introduction to Functional Programming
+
+Functional Programming is a style of coding based on functions.
+
+Focuses on pure functions, immutability, and avoiding side effects.
+
+Makes code predictable and easier to test.
+
+2. Pure Functions and Side Effects
+
+Pure Functions:
+
+Always return the same output for the same input.
+
+No side effects (doesn’t change external variables).
+
+// Example:
+
+// function add(a, b) {
+//   return a + b; // Pure function
+// }
+
+Side Effects:
+
+Changes global variables, logs, or updates DOM.
+
+// Example:
+
+// let total = 0;
+// function addToTotal(num) {
+//   total += num; // Side effect
+// }
+
+3. First-Class and Higher-Order Functions
+
+First-Class Functions:
+
+Functions are treated as values (stored in variables or passed as arguments).
+
+// Example:
+
+// const greet = function() {
+//   console.log('Hello');
+// };
+
+Higher-Order Functions:
+
+Takes functions as arguments or returns functions.
+
+// Example:
+
+// function repeat(func, times) {
+//   for (let i = 0; i < times; i++) {
+//     func();
+//   }
+// }
+// repeat(() => console.log('Hi'), 3);
+
+4. Callback Functions in Functional Programming
+
+A callback function is passed as an argument and executed later.
+
+// Example:
+
+// function fetchData(callback) {
+//   setTimeout(() => {
+//     callback('Data received');
+//   }, 1000);
+// }
+
+fetchData(console.log);
+
+5. Array Methods: map(), filter(), and reduce()
+
+map()
+
+Transforms each element of an array.
+
+Example:
+
+// const numbers = [1, 2, 3];
+// const doubled = numbers.map(num => num * 2);
+// console.log(doubled); // [2, 4, 6]
+
+filter()
+
+Filters elements based on a condition.
+
+Example:
+
+// const numbers = [1, 2, 3, 4];
+// const evens = numbers.filter(num => num % 2 === 0);
+// console.log(evens); // [2, 4]
+
+reduce()
+
+Combines values into a single result.
+
+Example:
+
+// const numbers = [1, 2, 3, 4];
+// const sum = numbers.reduce((total, num) => total + num, 0);
+// console.log(sum); // 10
+
+6. Function Composition and Chaining
+
+Composition combines multiple functions.
+
+Example:
+
+// const double = x => x * 2;
+// const square = x => x * x;
+// const result = square(double(3));
+// console.log(result); // 36
+
+Chaining applies methods one after another.
+
+Example:
+
+// const numbers = [1, 2, 3, 4];
+// const result = numbers
+//   .map(num => num * 2)
+//   .filter(num => num > 4)
+//   .reduce((sum, num) => sum + num, 0);
+// console.log(result); // 14
+
+7. Closures and Lexical Scope
+
+Lexical Scope: Functions can access variables defined outside their block.
+
+// Example:
+
+// function outer() {
+//   let count = 0;
+//   function inner() {
+//     count++;
+//     console.log(count);
+//   }
+//   return inner;
+// }
+// const counter = outer();
+// counter(); // 1
+// counter(); // 2
+
+8. Immutability and Avoiding Mutation
+
+Immutability: Do not change data directly.
+
+// Example (Immutable):
+
+// const numbers = [1, 2, 3];
+// const newNumbers = [...numbers, 4]; // Creates new array
+// console.log(newNumbers); // [1, 2, 3, 4]
+
+9. Currying and Partial Application
+
+Currying
+
+Splits a function into smaller functions, each taking one argument.
+
+// Example:
+
+// const add = a => b => c => a + b + c;
+// console.log(add(1)(2)(3)); // 6
+
+Partial Application
+
+Pre-fills some arguments.
+
+// Example:
+
+// const multiply = (a, b) => a * b;
+// const double = multiply.bind(null, 2);
+// console.log(double(5)); // 10
+
+10. Recursion in Functional Programming
+
+Recursion: A function calls itself until it completes a task.
+
+// Example: Factorial
+
+// function factorial(n) {
+//   if (n === 1) return 1;
+//   return n * factorial(n - 1);
+// }
+// console.log(factorial(5)); // 120
+
+
+// -----------------------------------------------------------------------------------------------------
+
 
