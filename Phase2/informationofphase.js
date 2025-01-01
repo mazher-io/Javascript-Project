@@ -518,3 +518,123 @@ Recursion: A function calls itself until it completes a task.
 // -----------------------------------------------------------------------------------------------------
 
 
+Day 10: Higher-Order Functions and Currying - Quick Revision Notes
+
+1. Introduction to Higher-Order Functions
+
+// Definition: Functions that can take other functions as arguments or return functions as outputs.
+
+// Examples: map(), filter(), reduce() are higher-order functions.
+
+// Benefits:
+
+// Reusability: Write general-purpose code.
+
+// Simplify Logic: Replace loops with built-in methods.
+
+// Example:
+
+// const numbers = [1, 2, 3, 4];
+// const doubled = numbers.map(num => num * 2);
+// console.log(doubled); // [2, 4, 6, 8]
+
+2. Using Functions as Arguments and Return Values
+
+// Functions as Arguments: Pass functions into other functions.
+
+// Functions as Return Values: Return functions for flexibility.
+
+// Example:
+
+// function greet(name) {
+//   return `Hello, ${name}!`;
+// }
+
+// function processGreeting(func, name) {
+//   return func(name);
+// }
+// console.log(processGreeting(greet, 'Mazher')); // Hello, Mazher!
+
+3. Practical Examples of Higher-Order Functions
+
+// Filtering Data:
+
+// const evens = [1, 2, 3, 4, 5].filter(num => num % 2 === 0);
+// console.log(evens); // [2, 4]
+
+// Sorting Data:
+
+// const names = ['Zara', 'Adam', 'Eve'];
+// const sorted = names.sort();
+// console.log(sorted); // ['Adam', 'Eve', 'Zara']
+
+// Mapping Data:
+
+// const prices = [10, 20].map(price => price * 1.1);
+// console.log(prices); // [11, 22]
+
+4. Currying
+
+// Definition: Breaking a function into multiple smaller functions that take one argument at a time.
+
+// Syntax:
+
+// const add = a => b => c => a + b + c;
+// console.log(add(1)(2)(3)); // 6
+
+// Benefits:
+
+// Reusability: Create reusable functions with preset values.
+
+// Flexible Composition: Easy chaining and function composition.
+
+5. Implementing Currying
+
+// Curried Multiply Function:
+
+// const multiply = a => b => a * b;
+// console.log(multiply(2)(3)); // 6
+
+// Real-World Example: URL Builder
+
+// const buildUrl = domain => path => query => `${domain}/${path}?${query}`;
+// const api = buildUrl('https://api.example.com');
+// console.log(api('users')('id=1')); // https://api.example.com/users?id=1
+
+6. Partial Application vs Currying
+
+// Currying: Processes arguments one-by-one.
+
+// Partial Application: Fixes some arguments, leaving others.
+
+// Example:
+
+// const multiply = (a, b) => a * b;
+// const double = multiply.bind(null, 2);
+// console.log(double(4)); // 8
+
+7. Benefits of Currying
+
+// Reusable Functions: Create specific reusable functions.
+
+// Simplified Logic: Break complex tasks into smaller steps.
+
+// Chaining and Composition: Combine functions easily.
+
+
+
+8. Function Composition
+
+// Combines multiple functions into a pipeline for processing data.
+
+// Example:
+
+// const toUpper = str => str.toUpperCase();
+// const exclaim = str => `${str}!`;
+// const greet = str => `Hello, ${str}`;
+
+// const compose = (...funcs) => input => funcs.reduceRight((acc, func) => func(acc), input);
+// const excitedGreeting = compose(exclaim, toUpper, greet);
+
+// console.log(excitedGreeting('Mazher')); // HELLO, MAZHER!
+
