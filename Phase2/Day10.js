@@ -59,6 +59,7 @@ const increment = (x) => x + 1;
 const combine = (f, g) => (x) => f(g(x));
 const doubleAndAddOne = combine(increment, double);
 
+
 // Test Outputs
 console.log("Squares:", squares);
 console.log("Added One:", addedOne);
