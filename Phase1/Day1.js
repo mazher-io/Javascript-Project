@@ -1,15 +1,21 @@
-// Closure Example
+function testScope(){
+    let a = 10;
+    if (true){
+        let a = 20;
+        console.log(a);
+    }
+    console.log(a);
+}
 
+testScope();
 
-function createCounter(){
-    let count = 0;
-    return function (){
-        count++ ;
-        return count;
-    };
+const createCounter = () => {
+
 }
 
 const counter = createCounter();
-console.log(counter());
-console.log(counter());
-console.log(counter());
+console.log(counter()); // 1
+console.log(counter()); // 2
+console.log(counter()); // 3
+
+
