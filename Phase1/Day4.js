@@ -1,17 +1,23 @@
-// Using Promises
-fetch("https://api.example.com/data")
-  .then((response) => response.json())
-  .then((data) => console.log(data))
-  .catch((error) => console.error("Error:", error));
+// Fetch user data from API
 
-// Using Async/Await
-async function fetchData() {
-  try {
-    const response = await fetch("https://api.example.com/data");
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.error("Error:", error);
+async function getUserData() {
+  try{
+    
+    let response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+
+        // Check if response is successful
+    if(!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    let data = await response.json();
+
+    console.log(`User Name: ${data.name}`);
+  } catch(error) {
+    console.error(error , error.message);
   }
 }
-fetchData();
+
+
+getUserData(); // Output: User Name: Leanne Graham
+
