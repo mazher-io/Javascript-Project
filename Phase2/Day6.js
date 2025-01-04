@@ -44,6 +44,7 @@ fetchData((result) => {
         .finally(() => {
             console.log('Step 7: Process finished');
         });
+        
 });
 
 
