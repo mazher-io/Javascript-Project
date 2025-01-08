@@ -30,7 +30,6 @@ const topStudents = students
 
 // 4. What is Currying?
 
-
 const multiply = (a) => (b) => a * b; // Split into steps
 const times2 = multiply(2); // First step sets 2
 const times3 = multiply(3); // First step sets 3
