@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note-Taking App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .note { border: 1px solid #ddd; padding: 10px; margin: 10px 0; }
+        .note-title { font-weight: bold; }
+        .delete-btn { color: red; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Note-Taking App</h1>
+    <div>
+      <input type="text" id="title" placeholder="Note Title">
+      <textarea id="description" placeholder="Note Description"></textarea>
+      <button id="addNoteBtn">Add Note</button>
+    </div>
+    <h2>Notes</h2>
+    <div id="notesList"></div>
+    <script src="app.js"></script>
+</body>
+</html>
