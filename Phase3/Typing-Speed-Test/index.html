@@ -37,6 +37,20 @@
     </style>
 </head>
 <body>
-    
+    <h1>Typing Speed Test</h1>
+    <p id="paragraph">
+        Click "Start Test to Begin typing"
+    </p>
+    <button id="start-btn">Start Test</button>
+    <div id="test-area" class="hidden">
+        <textarea  id="typing-area" placeholder="Start typing here..." disabled></textarea>
+        <p id="Timer Left: "<span id="timer">30</span>s</p>
+    </div>
+    <div id="results" class="hidden">
+        <p>Words Per Minute: <span class="result" id="wpm"></span></p>
+        <p>Accuracy: <span class="result" id="accuracy"></span>%</p>
+        
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
