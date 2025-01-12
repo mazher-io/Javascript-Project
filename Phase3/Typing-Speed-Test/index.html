@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing speed Test</title>
-    <style>
-        body {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Speed Test</title>
+  <style>
+    body {
       font-family: Arial, sans-serif;
       text-align: center;
       margin: 0;
@@ -34,23 +34,22 @@
     .result {
       font-weight: bold;
     }
-    </style>
+  </style>
 </head>
 <body>
-    <h1>Typing Speed Test</h1>
-    <p id="paragraph">
-        Click "Start Test to Begin typing"
-    </p>
-    <button id="start-btn">Start Test</button>
-    <div id="test-area" class="hidden">
-        <textarea  id="typing-area" placeholder="Start typing here..." disabled></textarea>
-        <p id="Timer Left: "<span id="timer">30</span>s</p>
-    </div>
-    <div id="results" class="hidden">
-        <p>Words Per Minute: <span class="result" id="wpm"></span></p>
-        <p>Accuracy: <span class="result" id="accuracy"></span>%</p>
-        
-    </div>
-    <script src="script.js"></script>
+  <h1>Typing Speed Test</h1>
+  <p id="paragraph">
+    Click "Start Test" to begin typing!
+  </p>
+  <button id="start-btn">Start Test</button>
+  <div id="test-area" class="hidden">
+    <textarea id="typing-area" placeholder="Start typing here..." disabled></textarea>
+    <p id="timer">Time Left: <span id="time-left">30</span>s</p>
+  </div>
+  <div id="results" class="hidden">
+    <p>Words Per Minute: <span id="wpm" class="result"></span></p>
+    <p>Accuracy: <span id="accuracy" class="result"></span>%</p>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
