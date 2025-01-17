@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Carousel</title>
+  <style>
+    /* Basic Styles */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    #carousel {
+      position: relative;
+      width: 500px;
+      height: 300px;
+      margin: 50px auto;
+      overflow: hidden;
+      border: 2px solid #ddd;
+    }
+
+    #carousel img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: opacity 0.5s ease-in-out;
+      opacity: 0;
+    }
+
+    #carousel img.active {
+      opacity: 1;
+    }
+
+    .controls {
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      border: none;
+      background: #5063F0;
+      color: white;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #2b48e0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Image Carousel</h1>
+  <div id="carousel">
+    <img src="https://via.placeholder.com/500x300?text=Image+1" class="active" alt="Image 1">
+    <img src="https://via.placeholder.com/500x300?text=Image+2" alt="Image 2">
+    <img src="https://via.placeholder.com/500x300?text=Image+3" alt="Image 3">
+  </div>
+  <div class="controls">
+    <button id="prev">Previous</button>
+    <button id="next">Next</button>
+  </div>
+
+  <script>
+    // JavaScript Logic
+    const images = document.querySelectorAll("#carousel img");
+    const prevButton = document.getElementById("prev");
+    const nextButton = document.getElementById("next");
+
+    let currentIndex = 0;
+
+    function updateCarousel(index) {
+      // Remove 'active' from all images
+      images.forEach((img, i) => {
+        img.classList.remove("active");
+      });
+      // Add 'active' to the current image
+      images[index].classList.add("active");
+    }
+
+    nextButton.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
+      updateCarousel(currentIndex);
+    });
+
+    prevButton.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length; // Loop back to the last image
+      updateCarousel(currentIndex);
+    });
+  </script>
+</body>
+</html>
