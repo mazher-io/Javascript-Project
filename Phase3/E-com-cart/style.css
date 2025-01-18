@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  .product, .cart {
+    margin: 10px 0;
+  }
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+  }
+  .cart-item button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+  }
