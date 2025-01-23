@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Reminder App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .task-form {
+            margin-bottom: 20px;
+        }
+
+        .task-list {
+            margin-top: 20px;
+        }
+
+        .task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .task .time {
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Task Reminder App</h1>
+    <form class="task-form" id="task-form">
+        <input type="text" id="task-name" placeholder="Task Name" required>
+        <input type="datetime-local" id="task-time" required>
+        <button type="submit">Add Task</button>
+    </form>
+
+    <div class="task-list" id="task-list">
+        <h1>Your Tasks</h1>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
