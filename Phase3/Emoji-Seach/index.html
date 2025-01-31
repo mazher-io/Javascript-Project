@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Search App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+        .emoji-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .emoji {
+            font-size: 30px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .emoji:hover {
+            transform: scale(1.2);
+        }
+        .copied {
+            color: green;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Emoji Search App</h1>
+    <input type="text" id="search" placeholder="Search for an emoji...">
+    <div class="emoji-container" id="emojiContainer"></div>
+    <p id="copiedMessage" class="copied" style="display: none;">Copied!</p>
+    
+    <script>
+        const emojiList = [
+            { emoji: "😀", name: "grinning", keywords: ["happy", "smile", "joy"] },
+            { emoji: "😂", name: "joy", keywords: ["laugh", "funny", "haha"] },
+            { emoji: "❤️", name: "heart", keywords: ["love", "like", "affection"] },
+            { emoji: "🔥", name: "fire", keywords: ["hot", "lit", "flame"] },
+            { emoji: "👍", name: "thumbs up", keywords: ["like", "approve", "okay"] },
+            { emoji: "🚀", name: "rocket", keywords: ["space", "fast", "launch"] },
+            { emoji: "🌟", name: "star", keywords: ["shine", "favorite", "bright"] },
+        ];
+
+        const searchInput = document.getElementById('search');
+        const emojiContainer = document.getElementById('emojiContainer');
+        const copiedMessage = document.getElementById('copiedMessage');
+
+        function displayEmojis(filter = "") {
+            emojiContainer.innerHTML = "";
+            const filteredEmojis = emojiList.filter(emoji => 
+                emoji.name.includes(filter) || 
+                emoji.keywords.some(keyword => keyword.includes(filter))
+            );
+            
+            filteredEmojis.forEach(emoji => {
+                const emojiSpan = document.createElement('span');
+                emojiSpan.classList.add('emoji');
+                emojiSpan.textContent = emoji.emoji;
+                emojiSpan.addEventListener('click', () => copyToClipboard(emoji.emoji));
+                emojiContainer.appendChild(emojiSpan);
+            });
+        }
+
+        function copyToClipboard(emoji) {
+            navigator.clipboard.writeText(emoji).then(() => {
+                copiedMessage.style.display = 'block';
+                setTimeout(() => copiedMessage.style.display = 'none', 1000);
+            });
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            displayEmojis(e.target.value.toLowerCase());
+        });
+
+        displayEmojis(); // Load all emojis initially
+    </script>
+</body>
+</html>
