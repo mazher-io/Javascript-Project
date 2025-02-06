@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.container {
+    max-width: 400px;
+    margin: auto;
+}
+input {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+button {
+    padding: 8px;
+}
+.result {
+    margin-top: 20px;
+}
