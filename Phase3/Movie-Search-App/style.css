@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.container {
+    max-width: 500px;
+    margin: auto;
+}
+input {
+    width: 70%;
+    padding: 8px;
+}
+button {
+    padding: 8px;
+    cursor: pointer;
+}
+.movie-details {
+    margin-top: 20px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
