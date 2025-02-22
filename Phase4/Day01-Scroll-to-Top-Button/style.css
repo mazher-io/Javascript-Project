@@ -1,0 +1,17 @@
+body {
+    height: 2000px;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #5063F0;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
